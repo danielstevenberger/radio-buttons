@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
+import { CardService } from './cards/card.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'radio-buttons';
+  constructor(private cardService: CardService){
+
+  }
+  currentOption = "none"
+  getValue(){
+    if(this.cardService.getValue()){
+    this.currentOption = this.cardService.getValue();
+    }
+  }
+
 }

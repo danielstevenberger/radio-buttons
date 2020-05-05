@@ -1,0 +1,22 @@
+<div class="card-container">
+  <div class="card-header">
+    <span class="card-title">
+      {{ cardTitle }}
+    </span>
+  </div>
+  <div class="card-body">
+    <form [formGroup]="cardForm">
+      <mat-radio-group class="radio-group" formControlName="options">
+        <mat-radio-button
+          class="radio-btn"
+          *ngFor="let option of cardOptions"
+          value="{{ option }}"
+          type="submit"
+          (click)="submitForm()"
+          >{{ option }}
+          </mat-radio-button
+        >
+      </mat-radio-group>
+    </form>
+  </div>
+</div>

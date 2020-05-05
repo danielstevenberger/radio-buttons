@@ -1,0 +1,29 @@
+.card-container {
+  border: 1px solid #337ab7;
+  border-radius: 4px;
+  width: 25%;
+  margin: 20px;
+  float: left;
+  cursor: pointer;
+}
+
+.card-header{
+  text-align: center;
+  padding: 10px 15px;
+  color: black;
+}
+
+.card-title{
+  font-size: 16px;
+}
+
+.radio-group{
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 10px 8px;
+}
+
+.radio-button{
+  margin: 5px 8px;
+}
+
