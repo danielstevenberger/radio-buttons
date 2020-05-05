@@ -6,7 +6,8 @@ import { FormGroup } from "@angular/forms";
   providedIn: "root",
 })
 export class CardService {
-  forms: FormGroup[];
+  private forms: FormGroup[];
+  private cardTitle: string;
 
   private card: Card[] = [
     new Card("One", ["one1"]),
@@ -43,5 +44,11 @@ export class CardService {
         return form.get("options").value;
       }
     }
+  }
+  setCardTitle(cardTitle: string){
+    this.cardTitle = cardTitle
+  }
+  getCardTitle(){
+    return this.cardTitle
   }
 }

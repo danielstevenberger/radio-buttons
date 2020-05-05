@@ -23,6 +23,7 @@ export class CardsComponent implements OnInit {
 
   submitForm(){
     this.cardService.clearForms(this.cardForm)
+    this.cardService.setCardTitle(this.cardTitle)
   }
 
 
