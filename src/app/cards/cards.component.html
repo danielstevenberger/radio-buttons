@@ -11,8 +11,7 @@
           class="radio-btn"
           *ngFor="let option of cardOptions"
           value="{{ option }}"
-          type="submit"
-          (click)="submitForm()"
+          (click)="submitForm(option)"
           >{{ option }}
           </mat-radio-button
         >

@@ -1,13 +1,15 @@
 import { Injectable } from "@angular/core";
 import { Card } from "./card.model";
 import { FormGroup } from "@angular/forms";
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: "root",
 })
 export class CardService {
   private forms: FormGroup[];
-  private cardTitle: string;
+  public cardTitle = new Subject<string>();
+  public cardOption = new Subject<string>();
 
   private card: Card[] = [
     new Card("One", ["one1"]),
@@ -38,17 +40,11 @@ export class CardService {
       }
     }
   }
-  getValue() {
-    for (let form of this.forms) {
-      if (form.valid) {
-        return form.get("options").value.slice();
-      }
-    }
+
+  setCardInfo(cardTitle: string, cardOption: string){
+    this.cardTitle.next(cardTitle)
+    this.cardOption.next(cardOption)
   }
-  setCardTitle(cardTitle: string){
-    this.cardTitle = cardTitle
-  }
-  getCardTitle(){
-    return this.cardTitle.slice()
-  }
+
+
 }

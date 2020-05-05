@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-import { CardService } from './card.service';
+import { CardService } from "./card.service";
 
 @Component({
   selector: "app-cards",
@@ -18,13 +18,15 @@ export class CardsComponent implements OnInit {
     this.cardForm = new FormGroup({
       options: new FormControl(null, Validators.required),
     });
-    this.cardService.addForm(this.cardForm)
+    this.cardService.addForm(this.cardForm);
   }
 
-  submitForm(){
-    this.cardService.clearForms(this.cardForm)
-    this.cardService.setCardTitle(this.cardTitle)
+  submitForm(option: string) {
+    console.log(this.cardForm);
+    this.cardService.setCardInfo(
+      this.cardTitle,
+      option
+    );
+    this.cardService.clearForms(this.cardForm);
   }
-
-
 }
