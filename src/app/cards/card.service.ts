@@ -41,7 +41,7 @@ export class CardService {
   getValue() {
     for (let form of this.forms) {
       if (form.valid) {
-        return form.get("options").value;
+        return form.get("options").value.slice();
       }
     }
   }
@@ -49,6 +49,6 @@ export class CardService {
     this.cardTitle = cardTitle
   }
   getCardTitle(){
-    return this.cardTitle
+    return this.cardTitle.slice()
   }
 }
