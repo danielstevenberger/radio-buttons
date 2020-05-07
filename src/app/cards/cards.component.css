@@ -4,26 +4,37 @@
   width: 25%;
   margin: 20px;
   float: left;
-  cursor: pointer;
+  background-color: rgb(228, 228, 228);
 }
 
-.card-header{
+.active {
+  background-color: white;
+}
+
+.active-header{
+  background-color: lightblue;
+}
+
+.card-header {
   text-align: center;
   padding: 10px 15px;
   color: black;
 }
 
-.card-title{
+.card-title {
   font-size: 16px;
 }
 
-.radio-group{
+.radio-group {
   display: flex;
   flex-direction: column;
   margin: 15px 0 10px 8px;
 }
 
-.radio-button{
+.radio-button {
   margin: 5px 8px;
 }
 
+input[type="radio"] {
+  border-radius: 0;
+}

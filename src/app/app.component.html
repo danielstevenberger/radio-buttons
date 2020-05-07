@@ -1,4 +1,10 @@
-<app-operations></app-operations>
-<p>Card Title: {{currentTitle}}</p>
-<p>Card Option: {{currentOption}}</p>
-
+<div style="display: flex; flex-direction: column;">
+  <app-operations></app-operations>
+  <div style="align-self: center;" *ngIf="currentTitle">
+    <p>Card Title: {{ currentTitle }}</p>
+    <p *ngIf="currentOption != ''">Card Option: {{ currentOption }}</p>
+  </div>
+  <div style="align-self: center;" *ngIf="!currentTitle">
+    <p>Select a card</p>
+  </div>
+</div>

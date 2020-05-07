@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input} from "@angular/core";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
 import { CardService } from "./card.service";
 
@@ -10,6 +10,7 @@ import { CardService } from "./card.service";
 export class CardsComponent implements OnInit {
   @Input() cardTitle: string;
   @Input() cardOptions: string[];
+  active = false;
   cardForm: FormGroup;
 
   constructor(private cardService: CardService) {}
@@ -22,11 +23,16 @@ export class CardsComponent implements OnInit {
   }
 
   submitForm(option: string) {
-    console.log(this.cardForm);
     this.cardService.setCardInfo(
       this.cardTitle,
       option
     );
     this.cardService.clearForms(this.cardForm);
   }
+
+  onActive(){
+    this.active = true
+    this.cardService.clearAllForms()
+  }
+
 }
